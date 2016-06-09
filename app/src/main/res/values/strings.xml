@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Saturnalia</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <!--menu_nav_left -->
+    <string name="home_string">Home</string>
+    <string name="event_string">Events</string>
+    <string name="schedule_string">Schedule</string>
+    <string name="workshops_string">Workshops</string>
+    <string name="lectures_string">Lectures</string>
+    <string name="sponsors_string">Sponsors</string>
+    <string name="settings_string">Settings</string>
+    <string name="about_string">About Us</string>
+    <string name="faq_string">FAQ</string>
+    <string name="openDrawer">open</string>
+    <string name="closeDrawer">close</string>
+
+</resources>

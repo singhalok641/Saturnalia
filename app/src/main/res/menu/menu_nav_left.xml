@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/group_one"
+        android:checkableBehavior="single">
+
+        <item
+        android:id="@+id/home"
+        android:checked="true"
+        android:icon="@drawable/ic_schedule"
+        android:title="@string/home_string" />
+
+        <item
+            android:id="@+id/event"
+            android:checked="false"
+            android:icon="@drawable/ic_events"
+            android:title="@string/event_string" />
+
+        <item
+            android:id="@+id/schedule"
+            android:checked="true"
+            android:icon="@drawable/ic_schedule"
+            android:title="@string/schedule_string" />
+
+        <item
+            android:id="@+id/workshops"
+            android:checked="false"
+            android:icon="@drawable/ic_events"
+            android:title="@string/workshops_string" />
+
+
+        <item
+            android:id="@+id/lectures"
+            android:checked="false"
+            android:icon="@drawable/ic_events"
+            android:title="@string/lectures_string" />
+
+    </group>
+
+    <group
+        android:id="@+id/group_two"
+        android:checkableBehavior="none">
+
+        <item
+            android:id="@+id/sponsors"
+            android:icon="@drawable/ic_events"
+            android:title="@string/sponsors_string"/>
+
+        <item
+            android:id="@+id/setting"
+            android:icon="@drawable/ic_events"
+            android:title="@string/settings_string"/>
+
+        <item
+            android:id="@+id/about"
+            android:icon="@drawable/ic_events"
+            android:title="@string/about_string"/>
+
+        <item
+            android:id="@+id/faq"
+            android:icon="@drawable/ic_events"
+            android:title="@string/faq_string"/>
+
+
+    </group>
+</menu>
