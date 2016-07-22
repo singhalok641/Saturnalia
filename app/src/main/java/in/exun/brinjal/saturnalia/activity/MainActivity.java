@@ -26,10 +26,12 @@ public class MainActivity extends AppCompatActivity {
     private View headerView;
     private int selection = 0;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         Bundle args = getIntent().getExtras();
         if (args != null){
@@ -95,6 +97,8 @@ public class MainActivity extends AppCompatActivity {
                         return true;
 
                 }
+
+
             }
         });
 
@@ -177,6 +181,7 @@ public class MainActivity extends AppCompatActivity {
             fragmentTransaction.commit();
         }
     }
+
 
 }
 

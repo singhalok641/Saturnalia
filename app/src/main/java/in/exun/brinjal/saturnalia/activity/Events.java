@@ -3,6 +3,7 @@ package in.exun.brinjal.saturnalia.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +13,8 @@ import android.view.View;
 import android.widget.Toast;
 
 import in.exun.brinjal.saturnalia.R;
+import in.exun.brinjal.saturnalia.helper.SlidingTabLayout;
+import in.exun.brinjal.saturnalia.Adapters.ViewPagerAdapter;
 
 public class Events extends AppCompatActivity {
 
@@ -20,6 +23,12 @@ public class Events extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private View headerView;
     private int selection = 1;
+    ViewPager pager;
+    ViewPagerAdapter adapter;
+    SlidingTabLayout tabs;
+    CharSequence Titles[]={"Cultural","Technical"};
+    int Numboftabs =2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,13 +119,37 @@ public class Events extends AppCompatActivity {
 
         //calling sync state is necessay or else your hamburger icon wont show up
         actionBarDrawerToggle.syncState();
+
+        // Creating The ViewPagerAdapter and Passing Fragment Manager, Titles fot the Tabs and Number Of Tabs.
+        adapter =  new ViewPagerAdapter(getSupportFragmentManager(),Titles,Numboftabs);
+
+        // Assigning ViewPager View and setting the adapter
+        pager = (ViewPager) findViewById(R.id.pager);
+        pager.setAdapter(adapter);
+        //TO set the active pages limit
+        pager.setOffscreenPageLimit(1);
+
+        // Assiging the Sliding Tab Layout View
+        tabs = (SlidingTabLayout) findViewById(R.id.tabs);
+        tabs.setDistributeEvenly(true); // To make the Tabs Fixed set this true, This makes the tabs Space Evenly in Available width
+
+        // Setting Custom Color for the Scroll bar indicator of the Tab View
+        tabs.setCustomTabColorizer(new SlidingTabLayout.TabColorizer() {
+            @Override
+            public int getIndicatorColor(int position) {
+                return getResources().getColor(R.color.colorAccent);
+            }
+        });
+
+        // Setting the ViewPager For the SlidingTabsLayout
+        tabs.setViewPager(pager);
+
     }
 
     private void displayView(int pos) {
         selection = pos;
         Intent i;
         switch (pos) {
-
 
             case 0:
                 i = new Intent(this,MainActivity.class);
