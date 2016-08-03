@@ -1,4 +1,4 @@
-package in.exun.brinjal.saturnalia.fragments;
+package in.exun.brinjal.saturnalia.fragments.EventListFragments;
 
 import android.content.Intent;
 import android.database.Cursor;
@@ -17,15 +17,15 @@ import in.exun.brinjal.saturnalia.helper.AppConstants;
 import in.exun.brinjal.saturnalia.helper.SQLiteHandler;
 
 
-public class Technical extends Fragment {
+public class Cultural extends Fragment {
 
-    private static final String TAG = "Technical";
+    private static final String TAG = "Cultural";
     private View rootView;
     private Cursor eventsList;
     private RecyclerView recyclerView;
-    private SQLiteHandler db;
     private RecyclerView.LayoutManager mLayoutManager;
     private RecyclerView.Adapter mAdapter;
+    private SQLiteHandler db;
 
     @Override
     public View onCreateView(LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
@@ -45,15 +45,14 @@ public class Technical extends Fragment {
 
     private void populateEventsList() {
 
-        String where = "Event_Type = '2'";
+        String where = "Event_Type = '1'";
         eventsList = db.fetchByCondition(AppConstants.TABLE_EVENTS,where);
         recyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(mLayoutManager);
         mAdapter = new EventAdapter(getActivity(), eventsList);
+
         recyclerView.setAdapter(mAdapter);
-
-
     }
 
     @Override
@@ -64,14 +63,13 @@ public class Technical extends Fragment {
             @Override
             public void onItemClick(int position, View v) {
 
-                Intent i =new Intent(getActivity(), EventDetails.class);
+                Intent i = new Intent(getActivity(), EventDetails.class);
                 i.putExtra("event_id",position);
                 getActivity().startActivity(i);
             }
         });
 
     }
-
 }
 
 

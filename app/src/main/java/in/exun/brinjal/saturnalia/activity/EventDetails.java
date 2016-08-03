@@ -46,6 +46,7 @@ public class EventDetails extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_details);
+        
 
         // SQLiteHandler
         db = SQLiteHandler.getInstance(this);

@@ -1,4 +1,4 @@
-package in.exun.brinjal.saturnalia.fragments;
+package in.exun.brinjal.saturnalia.fragments.EventListFragments;
 
 import android.content.Intent;
 import android.database.Cursor;

@@ -33,15 +33,7 @@
                 app:layout_collapseMode="parallax"
                 />
 
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/htab_toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="104dp"
-                android:gravity="top"
-                android:minHeight="?attr/actionBarSize"
-                app:layout_collapseMode="pin"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-                app:titleMarginTop="13dp" />
+            
 
             <HorizontalScrollView
                 android:id="@+id/horizontalScrollView1"
@@ -57,13 +49,21 @@
                     android:layout_height="?attr/actionBarSize"
                     app:tabIndicatorColor="@android:color/white" />
             </HorizontalScrollView>
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/htab_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="104dp"
+                android:gravity="top"
+                android:minHeight="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:titleMarginTop="13dp" />
+                
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
-
-
-
-    <android.support.v4.view.ViewPager
+   <android.support.v4.view.ViewPager
         android:id="@+id/htab_viewpager"
         android:layout_height="match_parent"
         android:layout_width="match_parent"

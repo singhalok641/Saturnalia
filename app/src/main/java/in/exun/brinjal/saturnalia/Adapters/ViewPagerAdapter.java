@@ -4,8 +4,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import in.exun.brinjal.saturnalia.fragments.Cultural;
-import in.exun.brinjal.saturnalia.fragments.Technical;
+import in.exun.brinjal.saturnalia.fragments.EventListFragments.Cultural;
+import in.exun.brinjal.saturnalia.fragments.EventListFragments.Technical;
 
 public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
